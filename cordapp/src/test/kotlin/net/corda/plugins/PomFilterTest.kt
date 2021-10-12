@@ -23,21 +23,18 @@ class PomFilterTest {
                 |    id 'maven-publish'
                 |}
                 |
-                |apply from: 'repositories.gradle'
-                |
                 |version = '1.0-SNAPSHOT'
                 |group = 'com.example'
                 |
                 |dependencies {
-                |    compile "org.slf4j:jcl-over-slf4j:1.7.26"
                 |    implementation "org.slf4j:slf4j-api:1.7.26"
                 |    runtimeOnly "org.slf4j:slf4j-simple:1.7.26"
-                |    cordaCompile "com.google.guava:guava:20.0"
-                |    cordaRuntime "javax.servlet:javax.servlet-api:3.1.0"
+                |    cordaProvided "com.google.guava:guava:20.0"
+                |    cordaRuntimeOnly "javax.servlet:javax.servlet-api:3.1.0"
                 |}
                 |
                 |cordapp {
-                |    info {
+                |    contract {
                 |        name = 'Testing'
                 |        targetPlatformVersion = 5
                 |    }
